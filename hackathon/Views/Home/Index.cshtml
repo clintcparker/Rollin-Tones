@@ -1,0 +1,203 @@
+﻿@using System.Web.Mvc.Html
+@using System.Xml
+@using WrapNetflix
+@using hackathon.Infrastructure
+@model List<hackathon.Models.Rtone.Movie>
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<style type="text/css">
+	body {
+		padding-top: 90px;
+	}
+	#myTab a {
+
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	#myTabContent .movieBox {
+		/*border: 1px solid rgba(0, 0, 0, 0.05);*/
+		padding: 39px;
+		margin-bottom: 4px;
+	}
+	.movieTitle {
+		font-size: 60px;
+	}
+	.footer {
+margin-top: 45px;
+padding: 35px 0 36px;
+border-top: 1px solid #E5E5E5;
+}
+.footer p {
+margin-bottom: 0;
+color: #555;
+}
+</style>
+
+
+<div class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container">
+			<span class="brand">
+				Rollin Tones
+			</span>
+			<div class="btn-group pull-right">
+				@if (Session["User"] == null)
+				{
+					<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+						Sign In
+						<span class ="caret"></span>
+					</a>
+					<ul class="dropdown-menu">
+						<li>
+							@Html.ActionLink("w/ Netflix", "SignIn")
+						</li>
+					</ul>
+				}
+				else
+				{
+					<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+						<i class="icon-user"></i>
+						@Session["Name"]
+						<span class ="caret"></span>
+					</a>
+					<ul class="dropdown-menu">
+						<li>
+							@Html.ActionLink("Sign Out", "SignOut")
+						</li>
+					</ul>
+				}
+			</div>
+       
+            
+        
+        
+        
+		</div>
+	</div>
+</div>
+
+
+<div class="container">
+	@{
+		int counter1 = 0;
+		int counter2 = 0;
+	}
+
+	<div class="row">
+		<ul class="nav nav-pills span10 offset1" id="myTab">
+			@foreach(var m in Model)
+			{
+				var reff = "#movie" + counter1;
+				<li><a href="@reff" data-toggle="tab"><h4>@m.Title</h4></a></li>
+				counter1++;
+			}
+
+		</ul>
+	</div>
+	<div id="myTabContent" class="tab-content">
+		@foreach(var m in Model)
+		{
+			var id = "movie" + counter2;
+			<div id="@id" class="row tab-pane">
+				<div class="movieBox span9 offset1 hero-unit well">
+					<div class="span2" id="picture_preview">
+						<img height="225px" src="@m.ImgLink">
+					</div>
+        
+					<div class="span6">
+						<ul class="nav">
+							<li style="">
+								<h1 class="movieTitle">@m.Title</h1>
+							</li>
+                
+							<li class="">
+								<h2>@m.Year</h2>
+							</li>
+						</ul>
+					</div>
+			
+				</div>
+				<hr class="soften span10 offset1"/>
+
+				<div class="span4 offset1 well"> <!--Why is this not working?! --> 
+					<h1 class="center">Music from the movie</h1>
+             
+					<table class="table">
+						<tbody>
+							@foreach (var s in m.OSoundTrack)
+							{
+								<tr>
+									<td>@Html.Raw(s.Title)</td>
+									<td>@Html.Raw(s.Artist)</td>
+								</tr>
+							}
+				
+						</tbody>
+					</table>
+				</div>  
+
+				<div class="span4 offset1 well"> 
+					<h1 class="center">Recommended Tracks</h1>
+             
+					<table class="table">
+						<tbody>
+							@foreach (var s in m.RSoundTrack)
+							{
+								<tr>
+									<td>@Html.Raw(s.Title)</td>
+									<td>@Html.Raw(s.Artist)</td>
+									<td><a href="@s.PlayLink" target="_blank">Listen</a></td>
+								</tr>
+							}
+						</tbody>
+					</table>
+				</div>
+    
+  
+			</div>
+			counter2++;
+		}
+
+	</div>
+	<footer class="footer">
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>Designed and built by the Rollin Rainbows </p>
+      </footer>
+</div><!--container_div -->
+<div class="modal hide fade" id="myModal">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal">×</button>
+		<h3>Hello</h3>
+	</div>
+	<div class="modal-body">
+		<p>Thanks for checking out our app. Feel free to keep playing around or log in with Netflix.</p>
+	</div>
+	<div class="modal-footer">
+		<a href="#" class="btn" data-dismiss="modal">Close</a>
+		<a href="/Home/SignIn" class="btn btn-primary">Sign In with Netflix</a>
+	</div>
+</div>
+
+@if (Session["User"] == null)
+{
+
+<script>
+	$(function () {
+		window.setTimeout("$('#myModal').modal('show')", 3000);
+		//$('#myModal').modal('show')
+	});
+</script>
+}
+<script>
+	$(function () {
+		$('#myTab a:first').tab('show'); // Select first tab
+		$('#myTab a').click(function (e) {
+			e.preventDefault();
+			$(this).tab('show');
+		})
+	});
+</script>

@@ -1,0 +1,178 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+WrapNetflix
+</name>
+</assembly>
+<members>
+<member name="T:WrapNetflix.User">
+	<summary>
+	</summary>
+	<remarks>User isn't necessarily thread-safe</remarks>
+</member><member name="P:WrapNetflix.RequestToken.PermissionUrl">
+	<summary>
+ This is the URL developers need to give to users in order to gain permission to access their account
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:WrapNetflix.RequestToken.ConvertToAccessToken">
+	<summary>
+ This method converts a Request Token into an Access Token
+ </summary>
+	<returns></returns>
+	<remarks>Do not call this method until after the user approves your application. Calling it prematurely will will foul the Request Token.</remarks>
+</member><member name="T:WrapNetflix.RequestToken">
+	<summary>
+ The Request Token is used to gain permission to a user's account. 
+ </summary>
+	<remarks>
+		<list><item>Step 1: Generate a Request Token</item>
+			<item>Step 2: Have </item>
+		</list></remarks>
+</member><member name="M:WrapNetflix.Catalog.IndexStream">
+	<summary>
+ This returns the entire Netflix catalog as a StreamReader. 
+ </summary>
+	<returns></returns>
+	<remarks>At this time of this writing it is over 179 MB.</remarks>
+</member><member name="M:WrapNetflix.Catalog.TitleSearch(System.String,System.Int32)">
+	<summary>
+ This function preforms a series of search requests, concatinating the result
+ </summary>
+	<param name="searchTerm"></param>
+	<param name="maxResults"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:WrapNetflix.Catalog">
+	<summary>
+ This object is used to access general data in the Netflix catalog.
+ </summary>
+	<remarks>Catalog is threadsafe</remarks>
+</member><member name="T:WrapNetflix.NetflixResource">
+	<summary>
+ This class represents a generic Netflix resource
+ </summary>
+	<remarks></remarks>
+</member><member name="T:WrapNetflix.AccessToken">
+	<summary>
+	</summary>
+	<remarks>This Token should be saved for later</remarks>
+</member><member name="P:WrapNetflix.Queue.Item(System.Int32)">
+	<summary>
+	</summary>
+	<param name="index">The index of the queue item to return.</param>
+	<value></value>
+	<returns></returns>
+	<remarks>This searches by Index, not by position.</remarks>
+</member><member name="P:WrapNetflix.Queue.ItemByPosition(System.Int32)">
+	<summary>
+ This searches through the queue to find an item in the indicated position
+ </summary>
+	<param name="position"></param>
+	<value></value>
+	<returns>A QueueItem in the requested position or a Null</returns>
+	<remarks></remarks>
+</member><member name="P:WrapNetflix.NetflixConnection.ConsumerSecret">
+	<summary>
+ This is the Consumer Secret assigned to your application by Netflix.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:WrapNetflix.NetflixConnection.ConsumerKey">
+	<summary>
+ This is the Consumer Key assigned to your application by Netflix.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:WrapNetflix.NetflixConnection.#ctor(System.String,System.String)">
+	<summary>
+ Creates a new instance of the NetflixConnection using the application's consumer key and secret
+ </summary>
+	<param name="consumerKey">This is the Consumer Key assigned to your application by Netflix.</param>
+	<param name="consumerSecret">This is the Consumer Secret assigned to your application by Netflix.</param>
+	<remarks></remarks>
+</member><member name="M:WrapNetflix.NetflixConnection.GenerateRequestToken">
+	<summary>
+ This method generates a Request Token for a specific user.
+ </summary>
+	<exception cref="T:WrapNetflix.NetflixException"></exception>
+	<returns></returns>
+	<remarks>This token has a URL that your end-user can use to approve your application. Once approved, the Request Token can be traded in for an Access Token.</remarks>
+</member><member name="M:WrapNetflix.NetflixConnection.GenerateAccessToken(WrapNetflix.RequestToken)">
+	<summary>
+ Converts an approved Request Token for a user-specific Access Token.
+ </summary>
+	<param name="requestToken"></param>
+	<returns></returns>
+	<remarks>Do not call this method until after the user approves your application. Calling it to soon will foul the Request Token. </remarks>
+</member><member name="M:WrapNetflix.NetflixConnection.RequestResourceStream(ClrExtensions.Net.Rest.RestCall)">
+	<summary>
+ This method makes a Netflix request and returns the results as a stream.
+ </summary>
+	<param name="resource"></param>
+	<returns></returns>
+	<remarks>Developers </remarks>
+</member><member name="M:WrapNetflix.NetflixConnection.RequestResource(ClrExtensions.Net.Rest.RestCall)">
+	<summary>
+ This method makes a Netflix request and returns the results as a string
+ </summary>
+	<param name="resource"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:WrapNetflix.NetflixConnection.RequestResource(ClrExtensions.Net.Rest.RestCall,WrapNetflix.IAccessToken)">
+	<summary>
+ This method makes a Netflix request, signed with a user's token, and returns the results as a string
+ </summary>
+	<param name="resource"></param>
+	<param name="accessToken"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:WrapNetflix.NetflixConnection.RequestXmlResource(ClrExtensions.Net.Rest.RestCall,WrapNetflix.IAccessToken)">
+	<summary>
+ This method makes a Netflix request, signed with a user's token, and returns the results as XML
+ </summary>
+	<param name="resource"></param>
+	<param name="accessToken"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:WrapNetflix.NetflixConnection.Catalog">
+	<summary>
+ This returns a Catalog object, which is used to search the Netflix catalog
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:WrapNetflix.NetflixConnection">
+	<summary>
+ The NetflixConnection object contains the information needed to make REST calls to the Netflix servers
+ </summary>
+	<remarks></remarks>
+</member><member name="M:WrapNetflix.ResourceLink.Load">
+	<summary>
+ Loads the resource in-place
+ </summary>
+	<remarks></remarks>
+</member><member name="M:WrapNetflix.ResourceLink.ParseAsCataglogTitle">
+	<summary>
+ Loads the linked resource in-place and then returns a matching CatalogTitle
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:WrapNetflix.ResourceLink.FetchXml">
+	<summary>
+ Returns the linked resource as XML
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:WrapNetflix.ResourceLink.Fetch">
+	<summary>
+ Returns the linked resource as a raw string
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member>
+</members>
+</doc>

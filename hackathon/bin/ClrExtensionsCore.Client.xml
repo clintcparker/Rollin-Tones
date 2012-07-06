@@ -1,0 +1,873 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+ClrExtensionsCore.Client
+</name>
+</assembly>
+<members>
+<member name="M:ClrExtensions.Events.Raise(System.EventHandler,System.Object,System.EventArgs)">
+	<summary>
+ This method is only available to C# applications. VB programs should use the RaiseEvent keyword instead.
+ </summary>
+	<param name="event"></param>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks>This method prevents race conditions from causing an unexpected null reference exception when raising an event.</remarks>
+</member><member name="M:ClrExtensions.Events.Raise``1(System.EventHandler{``0},System.Object,``0)">
+	<summary>
+ This method is only available to C# applications. VB programs should use the RaiseEvent keyword instead.
+ </summary>
+	<typeparam name="T"></typeparam>
+	<param name="event"></param>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks>This method prevents race conditions from causing an unexpected null reference exception when raising an event.</remarks>
+</member><member name="M:ClrExtensions.Events.Raise(System.EventHandler{System.EventArgs},System.Object)">
+	<summary>
+ This method is only available to C# applications. VB programs should use the RaiseEvent keyword instead.
+ </summary>
+	<param name="event"></param>
+	<param name="sender"></param>
+	<remarks>This method prevents race conditions from causing an unexpected null reference exception when raising an event.</remarks>
+</member><member name="M:ClrExtensions.Events.Raise(System.EventHandler,System.Object)">
+	<summary>
+ This method is only available to C# applications. VB programs should use the RaiseEvent keyword instead.
+ </summary>
+	<param name="event"></param>
+	<param name="sender"></param>
+	<remarks>This method prevents race conditions from causing an unexpected null reference exception when raising an event.</remarks>
+</member><member name="T:ClrExtensions.Collections.Tuple`2">
+	<summary>
+ This repesents a pair of values
+ </summary>
+	<typeparam name="TA"></typeparam>
+	<typeparam name="TB"></typeparam>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.IntPtrExtension.ToStruct``1(System.IntPtr)">
+	<summary>
+ Retrives the structure at the indicated location
+ </summary>
+	<typeparam name="T">The type of structure expected</typeparam>
+	<param name="pointer"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.FileInfoExtension.Print(System.IO.FileInfo)">
+	<summary>
+ This prints a file using the defaults set by the operating system
+ </summary>
+	<param name="file"></param>
+	<returns>The process for the application that is doing the printing</returns>
+	<remarks>This was hand tested because it is so heavily dependent on OS settings</remarks>
+</member><member name="T:ClrExtensions.LineBreakMode">
+	<summary>
+ This is used to indicate which operating systems line break mode is desired
+ </summary>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.StringExtension.Join(System.Collections.Generic.IEnumerable{System.String},System.String)">
+	<summary>
+ Joins all the strings in the supplied enumeration.
+ Empty and null enumerations will return an empty string
+ </summary>
+	<param name="source"></param>
+	<param name="separator"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.StringExtension.Repeat(System.String,System.Int32)">
+	<summary>
+ Repeats the given string N times.
+ To facilitate some coding patterns, N may be 0; this will result in an empty string.
+ </summary>
+	<param name="value"></param>
+	<param name="count"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.StringExtension.Join(System.Collections.Generic.IEnumerable{System.String},System.String,System.StringSplitOptions)">
+	<summary>
+ Joins all the strings in the supplied enumeration.
+ Empty and null enumerations will return an empty string
+ </summary>
+	<param name="source"></param>
+	<param name="separator"></param>
+	<param name="options">Optionally skip null and empty entries in the enumeration</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.StringExtension.Split(System.String,System.String)">
+	<summary>
+ Returns a string array that contains the substrings in this string that are delimited by elements of a specified string array.
+ </summary>
+	<param name="source"></param>
+	<param name="separator">A string that delimits the substrings in this string</param>
+	<returns>An array whose elements contain the substrings in this string that are delimited by the separator.</returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.StringExtension.Split(System.String,System.String,System.StringSplitOptions)">
+	<summary>
+ Returns a string array that contains the substrings in this string that are delimited by elements of a specified string array. A parameter specifies whether to return empty array elements.
+ </summary>
+	<param name="source"></param>
+	<param name="separator">A string that delimits the substrings in this string</param>
+	<param name="options">Specify System.StringSplitOptions.RemoveEmptyEntries to omit empty array elements from the array returned, or System.StringSplitOptions.None to include empty array elements in the array returned.</param>
+	<returns>An array whose elements contain the substrings in this string that are delimited by the separator.</returns>
+	<remarks></remarks>
+	<exception cref="T:System.ArgumentException">options is not one of the System.StringSplitOptions values.</exception>
+</member><member name="M:ClrExtensions.StringExtension.Split(System.String,System.String,System.Int32)">
+	<summary>
+ Returns a string array that contains the substrings in this string that are delimited by elements of a specified string array.
+ </summary>
+	<param name="source"></param>
+	<param name="separator">A string that delimits the substrings in this string</param>
+	<param name="count">The maximum number of substrings to return.</param>
+	<returns>An array whose elements contain the substrings in this string that are delimited by the separator.</returns>
+	<remarks></remarks>
+	<exception cref="T:System.ArgumentException">options is not one of the System.StringSplitOptions values.</exception>
+</member><member name="M:ClrExtensions.StringExtension.Split(System.String,System.String,System.Int32,System.StringSplitOptions)">
+	<summary>
+ Returns a string array that contains the substrings in this string that are delimited by elements of a specified string array. A parameter specifies whether to return empty array elements.
+ </summary>
+	<param name="source"></param>
+	<param name="separator">A string that delimits the substrings in this string</param>
+	<param name="count">The maximum number of substrings to return.</param>
+	<param name="options">Specify System.StringSplitOptions.RemoveEmptyEntries to omit empty array elements from the array returned, or System.StringSplitOptions.None to include empty array elements in the array returned.</param>
+	<returns>An array whose elements contain the substrings in this string that are delimited by the separator.</returns>
+	<remarks></remarks>
+	<exception cref="T:System.ArgumentException">options is not one of the System.StringSplitOptions values.</exception>
+</member><member name="M:ClrExtensions.StringExtension.FirstToLower(System.String)">
+	<summary>
+ Changes the first letter to a lower case letter, leaving the rest alone. Useful for turning "TestVar" into "testVar"
+ Nulls and empty strings are unchanged
+ </summary>
+	<param name="value"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.StringExtension.FirstToUpper(System.String)">
+	<summary>
+ Changes the first letter to a capital, leaving the rest alone. Useful for turning "testVar" into "TestVar"
+ Nulls and empty strings are unchanged
+ </summary>
+	<param name="value"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.StringExtension.Capitalize(System.String)">
+	<summary>
+ Changes the first letter to a capital and the rest to lower case. Useful for turning "TEST" into "Test"
+ Nulls and empty strings are unchanged
+ </summary>
+	<param name="value"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.StringExtension.DefaultIfNull(System.String)">
+	<summary>
+ Converts nulls into empty strings
+ </summary>
+	<param name="value"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.StringExtension.DefaultIfNull(System.String,System.String)">
+	<summary>
+ Converts nulls into a default value
+ </summary>
+	<param name="value"></param>
+	<param name="default"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.StringExtension.DefaultIfEmpty(System.String,System.String)">
+	<summary>
+ Converts nulls and empty strings into a default value
+ </summary>
+	<param name="value"></param>
+	<param name="default"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.StringExtension.IsEmailAddress(System.String)">
+	<summary>
+ Checks to see if the string is an email address as per the System.Net.Mail definition. Note that a string may be the combination of a display name and an address. TO just get the address part, use ToMailAddress.Address
+ </summary>
+	<param name="value"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.StringExtension.ToMailAddress(System.String)">
+	<summary>
+ Returns the canonical email address from a full email address
+ </summary>
+	<param name="value"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.StringExtension.Left(System.String,System.Int32)">
+	<summary>
+ Returns the first N characters, or the whole string
+ Nulls are unchanged
+ </summary>
+	<param name="value"></param>
+	<param name="length"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.StringExtension.Right(System.String,System.Int32)">
+	<summary>
+ Returns the last N characters, or the whole string
+ Nulls are unchanged
+ </summary>
+	<param name="value"></param>
+	<param name="length"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.StringExtension.NormalizeLineBreaks(System.String)">
+	<summary>
+ Normalizes line breaks to the Windows standard
+ </summary>
+	<param name="value"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.StringExtension.IsNullOrEmpty(System.String)">
+	<summary>
+	</summary>
+	<param name="value"></param>
+	<returns></returns>
+	<remarks>Not really needed for VB, but C# programmers seem to like it</remarks>
+</member><member name="T:ClrExtensions.Collections.Tuple`3">
+	<summary>
+ This represents a triplet of values
+ </summary>
+	<typeparam name="TA"></typeparam>
+	<typeparam name="TB"></typeparam>
+	<typeparam name="TC"></typeparam>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.LongExtension.ToByteSize(System.Int64)">
+	<summary>
+ Converts a byte count into a string such as "1.2 KB"
+ </summary>
+	<param name="bytes"></param>
+	<returns></returns>
+	<remarks>1 KB=1024 Bytes, 1 MB=1024 KB, 1 GB = 1024 MB
+ The return format is "##0.## XX" where XX is B, KB, MB, or GB as appropriate</remarks>
+</member><member name="M:ClrExtensions.LongExtension.ParseByteSize(System.String)">
+	<summary>
+ This reads a string such as "1.2 KB" and turns it into a count of bytes
+ </summary>
+	<param name="value"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.MathExtension.Primes">
+	<summary>
+ Creates an infinite list of primes.
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.VBLanguageExtension.CInt2(System.Object)">
+	<summary>
+ Duplicates the functionality of CInt, but with support for nullable types
+ </summary>
+	<param name="value">Value to be converted into an integer</param>
+	<returns>This returns Nothing if the value is Nothing, DBNull, or an empty string</returns>
+	<remarks>This will throw the appropriate exception if the conversion fails</remarks>
+</member><member name="M:ClrExtensions.ListExtension.Chunk``1(System.Collections.Generic.IList{``0},System.Int32)">
+	<summary>
+ Breaks a list into a collection of lists whose size is no more than the indicated limit
+ </summary>
+	<typeparam name="T"></typeparam>
+	<param name="this"></param>
+	<param name="size"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.ListExtension.GetRange``1(System.Collections.Generic.IList{``0},System.Int32,System.Int32)">
+	<summary>
+ Adds a GetRange method to any IList that doesn't already have one.
+ </summary>
+	<typeparam name="T"></typeparam>
+	<param name="this"></param>
+	<param name="index">The starting index to return</param>
+	<param name="count">The Maximum number of items to return</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.DateTimeExtension.FirstOfMonth(System.DateTime)">
+	<summary>
+ Returns the first day in the month specified
+ </summary>
+	<param name="value"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.DateTimeExtension.LastOfMonth(System.DateTime)">
+	<summary>
+ Returns the last day in the month specified
+ </summary>
+	<param name="value"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.DateTimeExtension.Next(System.DateTime,System.DayOfWeek)">
+	<summary>
+ Returns the next date that falls on the indicated day of the week
+ </summary>
+	<param name="value"></param>
+	<param name="dayofWeek"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.DateTimeExtension.Previous(System.DateTime,System.DayOfWeek)">
+	<summary>
+ Returns the previous date that falls on the indicated day of the week
+ </summary>
+	<param name="value"></param>
+	<param name="dayofWeek"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.DateTimeExtension.FirstOfMonth(System.DateTime,System.DayOfWeek)">
+	<summary>
+ Returns the first date in the indicated month that lands on the given day.
+ </summary>
+	<param name="value"></param>
+	<param name="dayofWeek"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.DateTimeExtension.LastOfMonth(System.DateTime,System.DayOfWeek)">
+	<summary>
+ Returns the late date in the indicated month that lands on the given day. 
+ </summary>
+	<param name="value"></param>
+	<param name="dayofWeek"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.DateTimeExtension.SetTime(System.DateTime,System.Int32,System.Int32)">
+	<summary>
+ Returns a DateTime with the time altered
+ </summary>
+	<param name="value">Date component</param>
+	<param name="hours"></param>
+	<param name="minutes"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.DateTimeExtension.SetTime(System.DateTime,System.TimeSpan)">
+	<summary>
+ Returns a DateTime with the time altered
+ </summary>
+	<param name="value">Date component</param>
+	<param name="time">Time component, must be less than 1 day</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.DateTimeExtension.IsBetween(System.DateTime,System.DateTime,System.DateTime)">
+	<summary>
+ Returns true is the indicated date is between the start and end dates. This is an inclusive check.
+ </summary>
+	<param name="value"></param>
+	<param name="start"></param>
+	<param name="end"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="F:ClrExtensions.ByteFormat.Bits">
+	<summary>
+ Bits
+ </summary>
+	<remarks></remarks>
+</member><member name="F:ClrExtensions.ByteFormat.UpperCaseHex">
+	<summary>
+ Two-digit hexadecimal using lowercase letters
+ </summary>
+	<remarks></remarks>
+</member><member name="F:ClrExtensions.ByteFormat.LowerCaseHex">
+	<summary>
+ Two-digit hexadecimal using uppercase letters
+ </summary>
+	<remarks></remarks>
+</member><member name="T:ClrExtensions.ByteFormat">
+	<summary>
+ The format used to convert bytes to strings
+ </summary>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.Collections.UniqueQueue`1.#ctor(ClrExtensions.Collections.UniqueQueueMode)">
+	<summary>
+ Creates a new unique queue using the objects default comparer
+ </summary>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.Collections.UniqueQueue`1.#ctor(ClrExtensions.Collections.UniqueQueueMode,System.Collections.Generic.IEqualityComparer{`0})">
+	<summary>
+ Creates a new unique queue using a custom comparer
+ </summary>
+	<param name="comparer"></param>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.Collections.UniqueQueue`1.Enqueue(`0)">
+	<summary>
+ Adds a single item to the queue
+ </summary>
+	<param name="value"></param>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.Collections.UniqueQueue`1.Enqueue(System.Collections.Generic.IEnumerable{`0})">
+	<summary>
+ Adds a list of items to the queue
+ </summary>
+	<param name="list"></param>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.Collections.UniqueQueue`1.TryDequeue(`0@)">
+	<summary>
+ Attempts to dequeue the first element in the queue
+ </summary>
+	<param name="value">This is set to the element dequeued or Nothing if the queue is empty</param>
+	<returns>True if the queue contained items, False otherwise</returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.Collections.UniqueQueue`1.DequeueBatch(System.Int32,System.Int32)">
+	<summary>
+ Dequeues a list of values
+ </summary>
+	<param name="minBatchSize">Minimum number of items to remove from the queue</param>
+	<param name="maxBatchSize">Maximum number of items to remove from the queue</param>
+	<returns>A list containing minBatchSize &lt;= count &lt;= MaxBatchSize items or an empty list if there aren't at least minBatchSize items</returns>
+	<remarks></remarks>
+</member><member name="P:ClrExtensions.Collections.UniqueQueue`1.Count">
+	<summary>
+ Returns the number of items currently in the queue
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:ClrExtensions.Collections.UniqueQueue`1">
+	<summary>
+ This is a queue in which any given item can only appear once.
+ </summary>
+	<remarks>All methods are threadsafe</remarks>
+</member><member name="F:ClrExtensions.Collections.UniqueQueueMode.Replace">
+	<summary>
+ Adding a duplicate item replaces the original item
+ </summary>
+	<remarks></remarks>
+</member><member name="F:ClrExtensions.Collections.UniqueQueueMode.MoveToEnd">
+	<summary>
+ Adding a duplicate item deletes the original and adds the new version to the end of the list
+ </summary>
+	<remarks></remarks>
+</member><member name="F:ClrExtensions.Collections.UniqueQueueMode.DuplicatesIqnored">
+	<summary>
+ Duplicates are not added to the queue, the original version remains
+ </summary>
+	<remarks></remarks>
+</member><member name="T:ClrExtensions.Collections.UniqueQueueMode">
+	<summary>
+ Operation modes for a Unique Queue
+ </summary>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.Net.Rest.QueryParameter.#ctor(System.String)">
+	<summary>
+ Creates a new QueryParameter without a value
+ </summary>
+	<param name="name"></param>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.Net.Rest.QueryParameter.#ctor(System.String,System.String)">
+	<summary>
+	</summary>
+	<param name="name"></param>
+	<param name="value"></param>
+	<remarks>A null value means something different than an empty value</remarks>
+</member><member name="M:ClrExtensions.Net.Rest.QueryParameter.ToString">
+	<summary>
+	</summary>
+	<returns>Returns "name=value" if value isnot nothing, otherwise returns "name"</returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.ActionExtensions.Repeat(System.Action,System.Int32)">
+	<summary>
+ Calls the action N times
+ </summary>
+	<param name="action">An action delegate to call</param>
+	<param name="occurances">The number of times the action is called</param>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.ActionExtensions.Repeat(System.Action{System.Int32},System.Int32)">
+	<summary>
+ Calls the action N times, passing the number 1 to N to the action
+ </summary>
+	<param name="action">An action delegate to call</param>
+	<param name="occurances">The number of times the action is called</param>
+	<remarks>Note that this is 1 based, not 0 based</remarks>
+</member><member name="M:ClrExtensions.Collections.Dictionary`3.#ctor">
+	<summary>
+ Creates a new instance with the default size
+ </summary>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.Collections.Dictionary`3.#ctor(System.Int32)">
+	<summary>
+ Creates a new instance with a suggested starting capacity
+ </summary>
+	<param name="capacity"></param>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.Collections.Dictionary`3.Add(`0,`1,`2)">
+	<summary>
+ Adds the specified keys and value to the dictionary.
+ </summary>
+	<param name="key1">The first part of the compound key</param>
+	<param name="key2">The second part of the compound key</param>
+	<param name="value">The value of the element to add. The value can be null for reference types.</param>
+	<remarks></remarks>
+	<exception cref="T:System.ArgumentException">An element with the same key already exists </exception>
+</member><member name="P:ClrExtensions.Collections.Dictionary`3.Item(`0,`1)">
+	<summary>
+ Gets or sets the value associated with the specified key.
+ </summary>
+	<param name="key1">The first part of the compound key</param>
+	<param name="key2">The second part of the compound key</param>
+	<value></value>
+	<returns>The value associated with the specified key. If the specified key is not found, a get operation throws a System.Collections.Generic.KeyNotFoundException, and a set operation creates a new element with the specified key.</returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.Collections.Dictionary`3.ContainsKey(`0,`1)">
+	<summary>
+ Determines whether the System.Collections.Generic.Dictionary(Of TKey, TValue) contains the specified key.
+ </summary>
+	<param name="key1">The first part of the compound key</param>
+	<param name="key2">The second part of the compound key</param>
+	<returns>true if the Dictionary contains an element with the specified key; otherwise, false.</returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.Collections.Dictionary`3.Remove(`0,`1)">
+	<summary>
+ Removes the value with the specified key from the System.Collections.Generic.Dictionary(Of TKey, TValue).
+ </summary>
+	<param name="key1">The first part of the compound key</param>
+	<param name="key2">The second part of the compound key</param>
+	<returns>true if the element is successfully found and removed; otherwise, false. This method returns false if key is not found </returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.Collections.Dictionary`3.TryGetValue(`0,`1,`2@)">
+	<summary>
+ Gets the value associated with the specified key.
+ </summary>
+	<param name="key1">The first part of the compound key</param>
+	<param name="key2">The second part of the compound key</param>
+	<param name="value">When this method returns, contains the value associated with the specified key, if the key is found; otherwise, the default value for the type of the value parameter. This parameter is passed uninitialized.</param>
+	<returns>true if the Dictionary contains an element with the specified key; otherwise, false.</returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.Collections.Dictionary`3.StoreAndReturn(`0,`1,`2@)">
+	<summary>
+ Stores the value, then returns the same value
+ </summary>
+	<param name="key1">The first part of the compound key</param>
+	<param name="key2">The second part of the compound key</param>
+	<param name="value"></param>
+	<returns></returns>
+	<remarks>This was created to support anonymous functions in VB that need to do more than one thing with a value in a single line. See the Memorize function for an example of its use</remarks>
+</member><member name="T:ClrExtensions.Collections.Dictionary`3">
+	<summary>
+ This dictionary uses a compound key. An entry is only considered a match if both keys match.
+ </summary>
+	<typeparam name="TKey1">The first part of the compound key</typeparam>
+	<typeparam name="TKey2">The second part of the compound key</typeparam>
+	<typeparam name="TValue">The data being stored</typeparam>
+	<remarks></remarks>
+</member><member name="F:ClrExtensions.UrlEncodingMethod.DoNoEncode">
+	<summary>
+ Use this to signify the value was already encoded. The operation thus becomes a no-op.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:ClrExtensions.UrlEncodingMethod.Clr">
+	<summary>
+ The method used by the .NET framework's HttpUtility class
+ </summary>
+	<remarks></remarks>
+</member><member name="F:ClrExtensions.UrlEncodingMethod.OAuth">
+	<summary>
+ The method used by the OAuth specification
+ </summary>
+	<remarks></remarks>
+</member><member name="T:ClrExtensions.UrlEncodingMethod">
+	<summary>
+ This is used to indicate which URL Encoding algorythm should be used.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.IOExtension.MapDrive(System.String,System.String)">
+	<summary>
+	</summary>
+	<param name="driveLetter"></param>
+	<param name="uncName"></param>
+	<remarks>This was hand tested. We cannot automate because it messes with the OS</remarks>
+</member><member name="M:ClrExtensions.IOExtension.PrintFile(System.String)">
+	<summary>
+ This prints a file using the defaults set by the operating system
+ </summary>
+	<param name="fileName"></param>
+	<returns></returns>
+	<remarks>This was hand tested because it is so heavily dependent on OS settings</remarks>
+</member><member name="P:ClrExtensions.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:ClrExtensions.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:ClrExtensions.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="M:ClrExtensions.DoubleExtension.Pow(System.Double,System.Double)">
+	<summary>
+ Shortcut to replace the missing POW operator in C#
+ </summary>
+	<param name="value"></param>
+	<param name="exponent"></param>
+	<returns></returns>
+	<remarks>Not needed in VB, but C# doesn't have an exponent operator</remarks>
+</member><member name="M:ClrExtensions.DoubleExtension.Pow(System.Double,System.Int32)">
+	<summary>
+ Shortcut to replace the missing POW operator in C#
+ </summary>
+	<param name="value"></param>
+	<param name="exponent"></param>
+	<returns></returns>
+	<remarks>Not needed in VB, but C# doesn't have an exponent operator</remarks>
+</member><member name="M:ClrExtensions.TimeSpanExtension.AddDays(System.TimeSpan,System.Int32)">
+	<summary>
+ Adds a number of days to a TimeSpan, returning a new TimeSpan
+ </summary>
+	<param name="value"></param>
+	<param name="days"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.TimeSpanExtension.AddHours(System.TimeSpan,System.Int32)">
+	<summary>
+ Adds a number of hours to a TimeSpan, returning a new TimeSpan
+ </summary>
+	<param name="value"></param>
+	<param name="hours"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.TimeSpanExtension.AddMinutes(System.TimeSpan,System.Int32)">
+	<summary>
+ Adds a number of minutes to a TimeSpan, returning a new TimeSpan
+ </summary>
+	<param name="value"></param>
+	<param name="minutes"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.TimeSpanExtension.AddSeconds(System.TimeSpan,System.Int32)">
+	<summary>
+ Adds a number of seconds to a TimeSpan, returning a new TimeSpan
+ </summary>
+	<param name="value"></param>
+	<param name="seconds"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.TimeSpanExtension.AddMilliseconds(System.TimeSpan,System.Int32)">
+	<summary>
+ Adds a number of milliseconds to a TimeSpan, returning a new TimeSpan
+ </summary>
+	<param name="value"></param>
+	<param name="milliseconds"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:ClrExtensions.SecurityPrincipalExtension">
+	<summary>
+	</summary>
+	<remarks>These are hand-tested because they are dependent on the OS</remarks>
+</member><member name="M:ClrExtensions.Security.OAuth.OAuthUtility.UrlEncode(System.String)">
+	<summary>
+ Custom URL encoding for the OAuth spec
+ </summary>
+	<param name="value"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:ClrExtensions.Security.OAuth.OAuthUtility">
+	<summary>
+ Utilities for generating and signing web requests using the OAuth specification
+ </summary>
+	<remarks>See http://oauth.net/ for information on this standard.</remarks>
+</member><member name="M:ClrExtensions.ThreadExtension.VolatileRead``1(``0@)">
+	<summary>
+ Perform a Volatile Read on a variable
+ </summary>
+	<typeparam name="T"></typeparam>
+	<param name="address"></param>
+	<returns></returns>
+	<remarks>C# doesn't need this, instead use the volatile keyword</remarks>
+</member><member name="M:ClrExtensions.ThreadExtension.VolatileWrite``1(``0@,``0)">
+	<summary>
+ Perform a Volatile Write on a variable
+ </summary>
+	<typeparam name="T"></typeparam>
+	<param name="address"></param>
+	<param name="value"></param>
+	<remarks>C# doesn't need this, instead use the volatile keyword</remarks>
+</member><member name="M:ClrExtensions.ThreadExtension.Sleep(System.Int32,System.Int32)">
+	<summary>
+ Sleeps for a period of minutes and seconds
+ </summary>
+	<param name="minutes"></param>
+	<param name="seconds"></param>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.CollectionExtension.AddRange``1(System.Collections.Generic.ICollection{``0},System.Collections.Generic.IEnumerable{``0})">
+	<summary>
+ This creates an AddRange method on all strongly typed collections that don't already have one.
+ </summary>
+	<typeparam name="T"></typeparam>
+	<param name="target">The list that will be updated</param>
+	<param name="source">The list that will be copied into the target list</param>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.Int32Extension.IsBetween(System.Int32,System.Int32,System.Int32)">
+	<summary>
+ Returns true if the value is between the low and high value, inclusive
+ </summary>
+	<param name="value"></param>
+	<param name="lowValue"></param>
+	<param name="highValue"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.Int32Extension.IsBitSet(System.Int32,System.Int32)">
+	<summary>
+ Determines is a given bit is set
+ </summary>
+	<param name="value"></param>
+	<param name="bit"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.Int32Extension.SetBit(System.Int32,System.Int32)">
+	<summary>
+ Returns a new integer with the given bit set
+ </summary>
+	<param name="value"></param>
+	<param name="bit"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.Int32Extension.ClearBit(System.Int32,System.Int32)">
+	<summary>
+ Returns a new integer with the given bit cleared
+ </summary>
+	<param name="value"></param>
+	<param name="bit"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.Int32Extension.ToBitString(System.Int32,System.Int32)">
+	<summary>
+ Turns the given integer into a string of 1's and 0's, with a space after every groupSize digits
+ </summary>
+	<param name="value"></param>
+	<param name="groupSize">This must be 0, 2, 4, 8, 16, or 32</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.Int32Extension.ToBitString(System.Int32)">
+	<summary>
+ Turns the given integer into a string of 1's and 0's, with a space after every 8th digit
+ </summary>
+	<param name="value"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.Int32Extension.Pow(System.Int32,System.Int32)">
+	<summary>
+ Performs a power operation, casting the result back to an integer
+ </summary>
+	<param name="base"></param>
+	<param name="exponent"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.ObjectExtension.IsIn``1(``0,``0[])">
+	<summary>
+ Returns true if the object is contained in the indicated list
+ </summary>
+	<typeparam name="T"></typeparam>
+	<param name="value"></param>
+	<param name="list"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.ObjectExtension.IsIn``1(``0,System.Collections.Generic.IList{``0})">
+	<summary>
+ Returns true if the object is contained in the indicated list
+ </summary>
+	<typeparam name="T"></typeparam>
+	<param name="value"></param>
+	<param name="list"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.ByteExtension.ToString(System.Collections.Generic.IEnumerable{System.Byte},System.String)">
+	<summary>
+ Calls Byte.ToString(format) on each byte and concatenates the results
+ </summary>
+	<param name="source"></param>
+	<param name="format">Null, "", or a valid string for Byte.ToString</param>
+	<returns>An empty string if source is empty/null</returns>
+	<remarks></remarks>
+	<exception cref="T:System.FormatException">Thrown if the format string is malformed.</exception>
+</member><member name="M:ClrExtensions.ByteExtension.ToString(System.Collections.Generic.IEnumerable{System.Byte},System.String,System.Int32)">
+	<summary>
+ Calls Byte.ToString(format) on each byte and concatenates the results
+ </summary>
+	<param name="source"></param>
+	<param name="format">Null, "", or a valid string for Byte.ToString</param>
+	<param name="groupingSize">Amount of bytes to group together. Each group is separated by a space.</param>
+	<returns>An empty string if source is empty/null</returns>
+	<remarks></remarks>
+	<exception cref="T:System.FormatException">Thrown if the format string is malformed.</exception>
+	<exception cref="T:System.ArgumentOutOfRangeException">Thrown is groupingSize &lt; 0.</exception>
+</member><member name="M:ClrExtensions.ByteExtension.ToString(System.Collections.Generic.IEnumerable{System.Byte},ClrExtensions.ByteFormat)">
+	<summary>
+ Calls Byte.ToString(format) on each byte and concatenates the results
+ </summary>
+	<param name="source"></param>
+	<param name="format">Must be a defined value</param>
+	<returns>An empty string if source is empty/null</returns>
+	<remarks>The grouping size is 0, except for Bits which is 1</remarks>
+	<exception cref="T:System.ArgumentOutOfRangeException">Thrown is format isn't a named value</exception>
+</member><member name="M:ClrExtensions.ByteExtension.ToString(System.Collections.Generic.IEnumerable{System.Byte},ClrExtensions.ByteFormat,System.Int32)">
+	<summary>
+ Calls Byte.ToString(format) on each byte and concatenates the results
+ </summary>
+	<param name="source"></param>
+	<param name="format">Must be a defined value. If set to Bits, the group-size is limited to 0 or 1.</param>
+	<param name="groupingSize">Amount of bytes to group together. Each group is separated by a space.</param>
+	<returns>An empty string if source is empty/null</returns>
+	<remarks></remarks>
+	<exception cref="T:System.ArgumentOutOfRangeException">Thrown is format isn't a named value</exception>
+	<exception cref="T:System.ArgumentOutOfRangeException">Thrown is groupingSize &lt; 0.</exception>
+	<exception cref="T:System.ArgumentOutOfRangeException">Thrown is format is Bit and groupingSize &gt; 1.</exception>
+</member><member name="M:ClrExtensions.ByteExtension.ToBitString(System.Byte)">
+	<summary>
+ Returns the value as a series of bits from most to least significant bit
+ </summary>
+	<param name="value"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.ByteExtension.ToString(System.Byte,ClrExtensions.ByteFormat)">
+	<summary>
+ Returns the value as a string
+ </summary>
+	<param name="value"></param>
+	<param name="format"></param>
+	<returns></returns>
+	<remarks></remarks>
+	<exception cref="T:System.ArgumentOutOfRangeException">Thrown is format isn't a defined value</exception>
+</member><member name="M:ClrExtensions.ByteExtension.IsBitSet(System.Byte,System.Int32)">
+	<summary>
+ Determines if a given bit is set.
+ </summary>
+	<param name="value"></param>
+	<param name="bit">0 to 7, 0 being the least significant digit</param>
+	<returns></returns>
+	<remarks></remarks>
+	<exception cref="T:System.ArgumentOutOfRangeException">Thrown if bit is outside 0 to 7</exception>
+</member><member name="M:ClrExtensions.ByteExtension.ToByteArray(System.String,System.Text.Encoding)">
+	<summary>
+ This converts a string into a byte array using the specified encoding
+ </summary>
+	<param name="source"></param>
+	<param name="encoding">Cannot be null.</param>
+	<returns></returns>
+	<remarks></remarks>
+	<exception cref="T:System.ArgumentNullException">Thrown is encoding is null</exception>
+</member><member name="M:ClrExtensions.DecimalExtension.Pow10(System.Int32)">
+	<summary>
+ Returns 10^N in decimal format
+ </summary>
+	<param name="exponent"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.DecimalExtension.TruncatePrecision(System.Decimal,System.Int32)">
+	<summary>
+ Truncates the decimal to the specified precision
+ </summary>
+	<param name="value"></param>
+	<param name="precision">Number of decimal places to retain. If negative, number of zeros to the left of the decimal place.</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ClrExtensions.EnumExtension.EnumIsDefined``1(``0)">
+	<summary>
+ Returns True if the value is defined by the indicated enumeration
+ </summary>
+	<typeparam name="T"></typeparam>
+	<param name="value"></param>
+	<returns></returns>
+	<remarks>This is constrained on Structure, but really should be constrained on Enum if it were possible</remarks>
+</member><member name="T:ClrExtensions.Net.Rest.RestCall">
+	<summary>
+ This is a strongly typed representation of a Verb/URL used in REST-style calls.
+ </summary>
+	<remarks>This was partially created in resonse to the total lameness of the System.Uri class</remarks>
+</member>
+</members>
+</doc>

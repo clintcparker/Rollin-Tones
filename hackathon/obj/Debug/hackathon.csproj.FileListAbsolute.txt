@@ -1,0 +1,12 @@
+C:\IIS\wwwroot\hack02\hackathon\bin\hackathon.dll
+C:\IIS\wwwroot\hack02\hackathon\bin\hackathon.pdb
+C:\IIS\wwwroot\hack02\hackathon\obj\Debug\hackathon.csprojResolveAssemblyReference.cache
+C:\IIS\wwwroot\hack02\hackathon\obj\Debug\hackathon.dll
+C:\IIS\wwwroot\hack02\hackathon\obj\Debug\hackathon.pdb
+C:\IIS\wwwroot\hack02\hackathon\bin\ClrExtensionsCore.Client.dll
+C:\IIS\wwwroot\hack02\hackathon\bin\Interop.IWshRuntimeLibrary.dll
+C:\IIS\wwwroot\hack02\hackathon\bin\WrapNetflix.pdb
+C:\IIS\wwwroot\hack02\hackathon\bin\WrapNetflix.xml
+C:\IIS\wwwroot\hack02\hackathon\bin\ClrExtensionsCore.Client.pdb
+C:\IIS\wwwroot\hack02\hackathon\bin\ClrExtensionsCore.Client.xml
+C:\IIS\wwwroot\hack02\hackathon\bin\lastfm-sharp.dll
